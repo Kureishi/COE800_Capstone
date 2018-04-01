@@ -12,8 +12,5 @@ public class MainActivity extends AppCompatActivity {
 
         //Test Comment
 
-
-        // Test Comment for Nick
-
     }
 }
