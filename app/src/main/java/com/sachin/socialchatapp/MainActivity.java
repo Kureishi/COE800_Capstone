@@ -182,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
 
                 int index = 0;
                 for (WifiP2pDevice device: peerList.getDeviceList()) {  // iterations depend on number of devices in peerList (all)
-                    deviceNameArray[index] = device.deviceName;         // get name of the device
+                    deviceNameArray[index] = login.uName;         // get name of the device
                     deviceArray[index] = device;                        // get the device
                     index++;
                 }
@@ -301,7 +301,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void run() {
             try {
-                socket.connect(new InetSocketAddress(hostAdd, 8888), 500);  // connect host address to port 8888 (same on server) with timeout 500
+                socket.connect(new InetSocketAddress(hostAdd, 8888), 2000);  // connect host address to port 8888 (same on server) with timeout 500
                 sendReceive = new SendReceive(socket);
                 sendReceive.start();
             } catch (IOException e) {
